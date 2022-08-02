@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Arapey:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+
+body {
+    background-color: #212529;
+    color: white;
+}
+
+.chess-board {
+    width: 60vmin;
+    height: 60vmin;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    width: 98vw;
+    height: 98vh;
+}
+
+.side-panel div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.memory-box, .reveal-box {
+    visibility: hidden;
+}
+
+h1 {
+    font-family: 'Arapey', serif;
+}
+
+.side-panel {
+    width: 30vmin; 
+    height: 60vmin;
+    text-align: center;
+    font-size: 1em;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button {
+    border: 1px solid black;
+    box-shadow: 5px 10px;
+    background-color: white;
+    font-family: 'PT Serif', serif;
+}

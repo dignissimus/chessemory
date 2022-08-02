@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="chessemory.css">
+        <link rel="stylesheet" href="chessground.css">
+        <link rel="stylesheet" href="board.css">
+        <link rel="stylesheet" href="pieces.css">
+        <title>Chessemory</title>
+    </head>
+    <body>
+        <div class="main-content">
+            <div id="board" class="chess-board"></div>
+            <div class="side-panel">
+                <h1>Chessemory</h1>
+                <div id="introduction-box" class="introduction-box">
+                    <button class=button id="start-game">Start Game</button>
+                </div>
+                <div id="memory-box" class="memory-box">
+                    <button class=button id="check-answer">Check Answer</button>
+                    <br>
+                    <button class=button id="give-up">Give Up</button>
+                </div>
+                <div id="reveal-box" class="reveal-box">
+                    <p class="response-text" id="response-text">You were correct</p>
+                    <button class="button" id="next-position">Next Position</button>
+                </div>
+            </div>
+        </div>
+        <script src="chessemory.js"></script>
+    </body>
+</html>
