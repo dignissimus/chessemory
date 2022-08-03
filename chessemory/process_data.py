@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import chess
 import csv
 import pathlib
 import operator
