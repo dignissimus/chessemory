@@ -63,7 +63,7 @@ function colourOfCharacter(character: string) {
 }
 
 fetch('/3').then(
-  (data) => data.text().then((fen) => { queue = fen.split('\n'); }),
+  (data) => data.text().then((fen) => { queue = fen.split('\n').slice(0, -1); }),
 );
 
 function startCountdown() {
