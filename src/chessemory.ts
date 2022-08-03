@@ -62,9 +62,11 @@ function colourOfCharacter(character: string) {
   return isUpperCase ? Colour.White : Colour.Black;
 }
 
-fetch('/3').then(
-  (data) => data.text().then((fen) => { queue = fen.split('\n').slice(0, -1); }),
-);
+function fetchPositions(numberOfPieces: bigint | string) {
+  fetch(`/${numberOfPieces}`).then(
+    (data) => data.text().then((fen) => { queue = fen.split('\n').slice(0, -1); }),
+  );
+}
 
 function startCountdown() {
 
@@ -140,6 +142,30 @@ window.addEventListener(
         document.getElementById('reveal-box').style.visibility = 'hidden';
         queue.shift();
         showNextPosition();
+      },
+    );
+
+    document.getElementById('number-of-pieces-slider').addEventListener(
+      'input',
+      (event: InputEvent) => {
+        document.getElementById('number-of-pieces-text').innerText = (<HTMLInputElement>event.target).value;
+      },
+    );
+
+    document.getElementById('save-settings').addEventListener(
+      'click',
+      () => {
+        fetchPositions((<HTMLInputElement>document.getElementById('number-of-pieces-slider')).value);
+        document.getElementById('settings-modal').style.display = 'none';
+      },
+    );
+
+    document.getElementById('settings-icon').addEventListener(
+      'click',
+      () => {
+        const settingsModal = document.getElementById('settings-modal');
+        const settingsModalIsVisible = settingsModal.style.display !== 'none';
+        settingsModal.style.display = settingsModalIsVisible ? 'none' : 'block';
       },
     );
   },

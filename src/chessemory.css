@@ -53,3 +53,36 @@ h1 {
     background-color: white;
     font-family: 'PT Serif', serif;
 }
+
+.settings-icon {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    width: 6vmin;
+    height: 6vmin;
+    background-color: gray;
+    cursor: pointer;
+}
+
+.settings-mask {
+    mask: url(settings.svg) no-repeat;
+}
+
+.close-mask {
+    mask: url(close.svg) no-repeat;
+}
+
+.settings-modal {
+    display: none;
+    position: absolute;
+    z-index: 100;
+    top: 10%;
+    right: 10%;
+    width: 80%;
+    height: 80%;
+    background-color: grey;
+}
+
+.settings-modal h1 {
+    text-align: center;
+}

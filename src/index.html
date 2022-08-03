@@ -9,6 +9,14 @@
         <title>Chessemory</title>
     </head>
     <body>
+        <div class="settings-icon settings-mask" id="settings-icon"></div>
+        <div class="settings-modal" id="settings-modal">
+            <h1>Settings</h1>
+            <input id="number-of-pieces-slider" type="range" min="3" max="32" value="3">
+            <p>Number of pieces: <span class="number" id="number-of-pieces-text">3</span></p>
+            <br>
+            <button class="button" id="save-settings">Save settings</button>
+        </div>
         <div class="main-content">
             <div id="board" class="chess-board"></div>
             <div class="side-panel">

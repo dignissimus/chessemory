@@ -15,6 +15,7 @@ module.exports = {
         { from: "src/chessground.css" },
         { from: "src/board.css" },
         { from: "src/pieces.css" },
+        { from: "assets" },
         { from: "data" },
       ]
     })
