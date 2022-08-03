@@ -25,6 +25,7 @@ interface AmericanPiece {
 }
 
 const EMPTY_BOARD_FEN: string = '8/8/8/8/8/8/8/8 w KQkq - 0 1';
+const DEFAULT_NUMBER_OF_PIECES: number = 3;
 
 let currentPiece: Piece | undefined = { colour: Colour.White, role: Role.Pawn };
 let canEdit: boolean = false;
@@ -62,7 +63,7 @@ function colourOfCharacter(character: string) {
   return isUpperCase ? Colour.White : Colour.Black;
 }
 
-function fetchPositions(numberOfPieces: bigint | string) {
+function fetchPositions(numberOfPieces: number | string) {
   fetch(`/${numberOfPieces}`).then(
     (data) => data.text().then((fen) => { queue = fen.split('\n').slice(0, -1); }),
   );
@@ -89,6 +90,8 @@ function showNextPosition() {
 function compareFen(left: string, right: string) {
   return left.split(' ')[0] === right.split(' ')[0];
 }
+
+fetchPositions(DEFAULT_NUMBER_OF_PIECES);
 
 window.addEventListener(
   'DOMContentLoaded',
