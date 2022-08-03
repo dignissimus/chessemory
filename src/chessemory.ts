@@ -58,11 +58,6 @@ function toChessgroundPiece(piece: Piece): AmericanPiece {
   };
 }
 
-function colourOfCharacter(character: string) {
-  const isUpperCase: boolean = character >= 'A' && character <= 'Z';
-  return isUpperCase ? Colour.White : Colour.Black;
-}
-
 function fetchPositions(numberOfPieces: number | string) {
   fetch(`/${numberOfPieces}`).then(
     (data) => data.text().then((fen) => { queue = fen.split('\n').slice(0, -1); }),
@@ -193,7 +188,7 @@ window.addEventListener(
     }
     if (roleLookup.has(key.toLowerCase())) {
       const role: Role = roleLookup.get(key.toLowerCase());
-      const colour: Colour = colourOfCharacter(key);
+      const colour: Colour = event.shiftKey ? Colour.White : Colour.Black;
       currentPiece = { colour, role };
     }
   },
