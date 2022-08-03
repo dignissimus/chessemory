@@ -171,6 +171,16 @@ window.addEventListener(
         settingsModal.style.display = settingsModalIsVisible ? 'none' : 'block';
       },
     );
+
+    document.addEventListener(
+      'keypress',
+      (event: KeyboardEvent) => {
+        if (event.key.toLowerCase() !== 'h') return;
+        const helpModal = document.getElementById('help-modal');
+        const helpModalIsVisible = helpModal.style.display !== 'none';
+        helpModal.style.display = helpModalIsVisible ? 'none' : 'block';
+      },
+    );
   },
 );
 
