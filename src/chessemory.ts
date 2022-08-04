@@ -116,12 +116,7 @@ window.addEventListener(
           document.getElementById('response-text').innerText = 'You were correct';
         } else {
           document.getElementById('response-text').innerText = 'You were not correct';
-          setTimeout(
-            () => {
-              chessground.set({ fen: correctAnswer });
-            },
-            500,
-          );
+          chessground.set({ fen: correctAnswer });
         }
         document.getElementById('reveal-box').style.visibility = 'visible';
       },
@@ -135,12 +130,7 @@ window.addEventListener(
         document.getElementById('memory-box').style.visibility = 'hidden';
         document.getElementById('response-text').innerText = '';
         document.getElementById('reveal-box').style.visibility = 'visible';
-        setTimeout(
-          () => {
-            chessground.set({ fen: queue[0] });
-          },
-          500,
-        );
+        chessground.set({ fen: queue[0] });
       },
     );
 
