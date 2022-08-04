@@ -66,10 +66,12 @@ h1 {
 
 .settings-mask {
     mask: url(settings.svg) no-repeat;
+    -webkit-mask: url(settings.svg) no-repeat;
 }
 
 .close-mask {
     mask: url(close.svg) no-repeat;
+    -webkit-mask: url(close.svg) no-repeat;
 }
 
 .modal {
