@@ -118,12 +118,29 @@ window.addEventListener(
           document.getElementById('response-text').innerText = 'You were not correct';
           setTimeout(
             () => {
-              chessground.set({ fen: queue[0] });
+              chessground.set({ fen: correctAnswer });
             },
             500,
           );
         }
         document.getElementById('reveal-box').style.visibility = 'visible';
+      },
+    );
+
+    document.getElementById('give-up').addEventListener(
+      'click',
+      () => {
+        canEdit = false;
+
+        document.getElementById('memory-box').style.visibility = 'hidden';
+        document.getElementById('response-text').innerText = '';
+        document.getElementById('reveal-box').style.visibility = 'visible';
+        setTimeout(
+          () => {
+            chessground.set({ fen: queue[0] });
+          },
+          500,
+        );
       },
     );
 
